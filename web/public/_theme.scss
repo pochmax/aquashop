@@ -1,0 +1,84 @@
+// Couleurs
+$bleu-fonce: #004d99;
+$bleu-moyen: #66b3ff;
+$bleu-clair: #cce0ff;
+$vert-ocean: #2ecc71;
+$vert-mer: #00cc99;
+$vert-emeraude: #2ecc71;
+$gris-mer: #8395a7;
+$blanc: #ffffff;
+
+// Definition des variables de couleur
+$couleur-principale: $bleu-moyen;
+$couleur-secondaire: $vert-mer;
+$couleur-texte: $gris-mer;
+
+// Definition des autres variables
+$espace: 1.25rem;
+$bordure: 0.0625rem solid $gris-mer;
+
+// Styles de base
+body {
+  font-family: Arial, sans-serif;
+  background-color: $bleu-clair;
+  color: $couleur-texte;
+}
+
+// Styles pour les liens
+a {
+  color: $gris-mer;
+  text-decoration: none;
+  margin: $espace;
+}
+
+// Styles pour les boutons
+.button {
+  background-color: $couleur-principale;
+  color: $blanc;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  &:hover {
+    background-color: darken($couleur-principale, 10%);
+  }
+}
+
+// Styles pour les conteneurs
+.container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: $espace;
+}
+
+// Styles pour les sections
+.section {
+  background-color: $blanc;
+  border: $bordure;
+  border-radius: 0.3125rem;
+  padding: $espace;
+  margin-bottom: $espace;
+}
+
+// Styles pour les titres
+h1, h2, h3, h4, h5, h6 {
+  color: $couleur-secondaire;
+  margin-top: 0;
+}
+
+// Styles pour les elements de formulaire
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  padding: 0.625rem;
+  border: $bordure;
+  border-radius: 0.3125rem;
+  margin-bottom: $espace;
+  width: 100%;
+  &:focus {
+    outline: none;
+    border-color: $couleur-secondaire;
+  }
+}
