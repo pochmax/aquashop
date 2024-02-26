@@ -4,15 +4,14 @@ import type {
   FindWindsurfBoards,
 } from 'types/graphql'
 
-import { Link, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import type { TypedDocumentNode } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
+import Item from 'src/components/Item/Item'
 import { QUERY } from 'src/components/WindsurfBoard/WindsurfBoardsCell'
-import { truncate } from 'src/lib/formatters'
 
-const DELETE_WINDSURF_BOARD_MUTATION: TypedDocumentNode<
+export const DELETE_WINDSURF_BOARD_MUTATION: TypedDocumentNode<
   DeleteWindsurfBoardMutation,
   DeleteWindsurfBoardMutationVariables
 > = gql`
@@ -45,58 +44,10 @@ const WindsurfBoardsList = ({ windsurfBoards }: FindWindsurfBoards) => {
   }
 
   return (
-    <div className="rw-segment rw-table-wrapper-responsive">
-      <table className="rw-table">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Brand</th>
-            <th>Fins</th>
-            <th>Type</th>
-            <th>Model</th>
-            <th>Volume</th>
-            <th>&nbsp;</th>
-          </tr>
-        </thead>
-        <tbody>
-          {windsurfBoards.map((windsurfBoard) => (
-            <tr key={windsurfBoard.id}>
-              <td>{truncate(windsurfBoard.id)}</td>
-              <td>{truncate(windsurfBoard.brand)}</td>
-              <td>{truncate(windsurfBoard.fins)}</td>
-              <td>{truncate(windsurfBoard.type)}</td>
-              <td>{truncate(windsurfBoard.model)}</td>
-              <td>{truncate(windsurfBoard.volume)}</td>
-              <td>
-                <nav className="rw-table-actions">
-                  <Link
-                    to={routes.windsurfBoard({ id: windsurfBoard.id })}
-                    title={'Show windsurfBoard ' + windsurfBoard.id + ' detail'}
-                    className="rw-button rw-button-small"
-                  >
-                    Show
-                  </Link>
-                  <Link
-                    to={routes.editWindsurfBoard({ id: windsurfBoard.id })}
-                    title={'Edit windsurfBoard ' + windsurfBoard.id}
-                    className="rw-button rw-button-small rw-button-blue"
-                  >
-                    Edit
-                  </Link>
-                  <button
-                    type="button"
-                    title={'Delete windsurfBoard ' + windsurfBoard.id}
-                    className="rw-button rw-button-small rw-button-red"
-                    onClick={() => onDeleteClick(windsurfBoard.id)}
-                  >
-                    Delete
-                  </button>
-                </nav>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="list">
+      {windsurfBoards.map((windsurfBoard) => (
+        <Item key={windsurfBoard.id} item={windsurfBoard} />
+      ))}
     </div>
   )
 }

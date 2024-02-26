@@ -82,3 +82,18 @@ select {
     border-color: $couleur-secondaire;
   }
 }
+
+
+.list{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card{
+  border: 0.1rem solid $bleu-fonce;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+  max-width: 20rem;
+}

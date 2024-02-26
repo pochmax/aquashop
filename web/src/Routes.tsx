@@ -27,14 +27,6 @@ const Routes = () => {
         <Route path="/windsurf-boards/{id:Int}" page={WindsurfBoardWindsurfBoardPage} name="windsurfBoard" />
         <Route path="/windsurf-boards" page={WindsurfBoardWindsurfBoardsPage} name="windsurfBoards" />
       </Set>
-      <Set wrap={ScaffoldLayout} title="WindsurfBoards" titleTo="windsurfBoards" buttonLabel="New WindsurfBoard" buttonTo="newWindsurfBoard">
-      </Set>
-      <Set wrap={ScaffoldLayout} title="WindsurfSails" titleTo="windsurfSails" buttonLabel="New WindsurfSail" buttonTo="newWindsurfSail">
-      </Set>
-      <Set wrap={ScaffoldLayout} title="WindsurfSails" titleTo="windsurfSails" buttonLabel="New WindsurfSail" buttonTo="newWindsurfSail">
-      </Set>
-      <Set wrap={ScaffoldLayout} title="WindsurfBoards" titleTo="windsurfBoards" buttonLabel="New WindsurfBoard" buttonTo="newWindsurfBoard">
-      </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
   )
