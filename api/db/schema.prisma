@@ -24,6 +24,7 @@ model WindsurfBoard {
   type String
   model String
   volume Int
+  imageUrl String?
 }
 
 model WindsurfSail {
@@ -35,4 +36,13 @@ model WindsurfSail {
   cumber Int?
   mastSize Float?
   wishSize Float?
+  imageUrl String?
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  pseudo String @unique
+  email String @unique
+  phoneNumber String @unique
+  avatarUrl String?
 }
