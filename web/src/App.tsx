@@ -5,6 +5,7 @@ import Menu from 'src/components/Menu/Menu'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
 
+import './scaffold.css'
 import './scaffold.scss'
 import './index.scss'
 
