@@ -15,10 +15,14 @@ export const QUERY: TypedDocumentNode<
   query FindUserById($id: Int!) {
     user: user(id: $id) {
       id
-      pseudo
       email
-      phoneNumber
-      avatarUrl
+      username
+      role
+      hashedPassword
+      salt
+      resetToken
+      resetTokenExpiresAt
+      webAuthnChallenge
     }
   }
 `

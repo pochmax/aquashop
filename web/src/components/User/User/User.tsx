@@ -9,7 +9,7 @@ import { useMutation } from '@redwoodjs/web'
 import type { TypedDocumentNode } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
-import {} from 'src/lib/formatters'
+import { timeTag } from 'src/lib/formatters'
 
 const DELETE_USER_MUTATION: TypedDocumentNode<
   DeleteUserMutation,
@@ -58,20 +58,36 @@ const User = ({ user }: Props) => {
               <td>{user.id}</td>
             </tr>
             <tr>
-              <th>Pseudo</th>
-              <td>{user.pseudo}</td>
-            </tr>
-            <tr>
               <th>Email</th>
               <td>{user.email}</td>
             </tr>
             <tr>
-              <th>Phone number</th>
-              <td>{user.phoneNumber}</td>
+              <th>Username</th>
+              <td>{user.username}</td>
             </tr>
             <tr>
-              <th>Avatar url</th>
-              <td>{user.avatarUrl}</td>
+              <th>Role</th>
+              <td>{user.role}</td>
+            </tr>
+            <tr>
+              <th>Hashed password</th>
+              <td>{user.hashedPassword}</td>
+            </tr>
+            <tr>
+              <th>Salt</th>
+              <td>{user.salt}</td>
+            </tr>
+            <tr>
+              <th>Reset token</th>
+              <td>{user.resetToken}</td>
+            </tr>
+            <tr>
+              <th>Reset token expires at</th>
+              <td>{timeTag(user.resetTokenExpiresAt)}</td>
+            </tr>
+            <tr>
+              <th>Web authn challenge</th>
+              <td>{user.webAuthnChallenge}</td>
             </tr>
           </tbody>
         </table>

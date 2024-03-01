@@ -6,7 +6,7 @@ export const standard = defineScenario<Prisma.WindsurfSailCreateArgs>({
     one: {
       data: {
         brand: 'String',
-        size: 7247596.534592216,
+        size: 7411978.017975867,
         type: 'String',
         model: 'String',
       },
@@ -14,7 +14,7 @@ export const standard = defineScenario<Prisma.WindsurfSailCreateArgs>({
     two: {
       data: {
         brand: 'String',
-        size: 8196109.333332671,
+        size: 7711587.641307629,
         type: 'String',
         model: 'String',
       },

@@ -25,6 +25,8 @@ export const QUERY: TypedDocumentNode<
       cumber
       mastSize
       wishSize
+      imageUrl
+      sails
     }
   }
 `

@@ -6,19 +6,19 @@ export const standard = defineScenario<Prisma.WindsurfBoardCreateArgs>({
     one: {
       data: {
         brand: 'String',
-        fins: 7280684,
+        fins: 4384165,
         type: 'String',
         model: 'String',
-        volume: 9203720,
+        volume: 436881,
       },
     },
     two: {
       data: {
         brand: 'String',
-        fins: 3064544,
+        fins: 2412424,
         type: 'String',
         model: 'String',
-        volume: 7715420,
+        volume: 8741267,
       },
     },
   },

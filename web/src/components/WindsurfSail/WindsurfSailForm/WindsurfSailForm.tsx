@@ -163,6 +163,40 @@ const WindsurfSailForm = (props: WindsurfSailFormProps) => {
 
         <FieldError name="wishSize" className="rw-field-error" />
 
+        <Label
+          name="imageUrl"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Image url
+        </Label>
+
+        <TextField
+          name="imageUrl"
+          defaultValue={props.windsurfSail?.imageUrl}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="imageUrl" className="rw-field-error" />
+
+        <Label
+          name="sails"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Sails
+        </Label>
+
+        <TextField
+          name="sails"
+          defaultValue={props.windsurfSail?.sails}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="sails" className="rw-field-error" />
+
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">
             Save

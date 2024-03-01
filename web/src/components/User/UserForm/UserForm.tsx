@@ -7,8 +7,15 @@ import {
   FieldError,
   Label,
   TextField,
+  DatetimeLocalField,
   Submit,
 } from '@redwoodjs/forms'
+
+const formatDatetime = (value) => {
+  if (value) {
+    return value.replace(/:\d{2}\.\d{3}\w/, '')
+  }
+}
 
 type FormUser = NonNullable<EditUserById['user']>
 
@@ -35,24 +42,6 @@ const UserForm = (props: UserFormProps) => {
         />
 
         <Label
-          name="pseudo"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Pseudo
-        </Label>
-
-        <TextField
-          name="pseudo"
-          defaultValue={props.user?.pseudo}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-
-        <FieldError name="pseudo" className="rw-field-error" />
-
-        <Label
           name="email"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
@@ -71,39 +60,125 @@ const UserForm = (props: UserFormProps) => {
         <FieldError name="email" className="rw-field-error" />
 
         <Label
-          name="phoneNumber"
+          name="username"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Phone number
+          Username
         </Label>
 
         <TextField
-          name="phoneNumber"
-          defaultValue={props.user?.phoneNumber}
+          name="username"
+          defaultValue={props.user?.username}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="username" className="rw-field-error" />
+
+        <Label
+          name="role"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Role
+        </Label>
+
+        <TextField
+          name="role"
+          defaultValue={props.user?.role}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="role" className="rw-field-error" />
+
+        <Label
+          name="hashedPassword"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Hashed password
+        </Label>
+
+        <TextField
+          name="hashedPassword"
+          defaultValue={props.user?.hashedPassword}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
 
-        <FieldError name="phoneNumber" className="rw-field-error" />
+        <FieldError name="hashedPassword" className="rw-field-error" />
 
         <Label
-          name="avatarUrl"
+          name="salt"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Avatar url
+          Salt
         </Label>
 
         <TextField
-          name="avatarUrl"
-          defaultValue={props.user?.avatarUrl}
+          name="salt"
+          defaultValue={props.user?.salt}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ required: true }}
+        />
+
+        <FieldError name="salt" className="rw-field-error" />
+
+        <Label
+          name="resetToken"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Reset token
+        </Label>
+
+        <TextField
+          name="resetToken"
+          defaultValue={props.user?.resetToken}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
         />
 
-        <FieldError name="avatarUrl" className="rw-field-error" />
+        <FieldError name="resetToken" className="rw-field-error" />
+
+        <Label
+          name="resetTokenExpiresAt"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Reset token expires at
+        </Label>
+
+        <DatetimeLocalField
+          name="resetTokenExpiresAt"
+          defaultValue={formatDatetime(props.user?.resetTokenExpiresAt)}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="resetTokenExpiresAt" className="rw-field-error" />
+
+        <Label
+          name="webAuthnChallenge"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Web authn challenge
+        </Label>
+
+        <TextField
+          name="webAuthnChallenge"
+          defaultValue={props.user?.webAuthnChallenge}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+        />
+
+        <FieldError name="webAuthnChallenge" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

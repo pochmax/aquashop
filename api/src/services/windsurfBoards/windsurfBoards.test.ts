@@ -35,18 +35,18 @@ describe('windsurfBoards', () => {
     const result = await createWindsurfBoard({
       input: {
         brand: 'String',
-        fins: 6126901,
+        fins: 1328713,
         type: 'String',
         model: 'String',
-        volume: 6828117,
+        volume: 1475667,
       },
     })
 
     expect(result.brand).toEqual('String')
-    expect(result.fins).toEqual(6126901)
+    expect(result.fins).toEqual(1328713)
     expect(result.type).toEqual('String')
     expect(result.model).toEqual('String')
-    expect(result.volume).toEqual(6828117)
+    expect(result.volume).toEqual(1475667)
   })
 
   scenario('updates a windsurfBoard', async (scenario: StandardScenario) => {

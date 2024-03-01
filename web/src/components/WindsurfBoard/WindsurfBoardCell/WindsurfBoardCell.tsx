@@ -23,6 +23,8 @@ export const QUERY: TypedDocumentNode<
       type
       model
       volume
+      imageUrl
+      sails
     }
   }
 `

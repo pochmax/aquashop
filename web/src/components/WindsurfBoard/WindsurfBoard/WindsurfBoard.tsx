@@ -77,6 +77,14 @@ const WindsurfBoard = ({ windsurfBoard }: Props) => {
               <th>Volume</th>
               <td>{windsurfBoard.volume}</td>
             </tr>
+            <tr>
+              <th>Image url</th>
+              <td>{windsurfBoard.imageUrl}</td>
+            </tr>
+            <tr>
+              <th>Sails</th>
+              <td>{windsurfBoard.sails}</td>
+            </tr>
           </tbody>
         </table>
       </div>

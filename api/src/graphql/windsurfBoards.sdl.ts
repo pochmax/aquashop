@@ -6,6 +6,8 @@ export const schema = gql`
     type: String!
     model: String!
     volume: Int!
+    imageUrl: String
+    sails: String
   }
 
   type Query {
@@ -19,6 +21,8 @@ export const schema = gql`
     type: String!
     model: String!
     volume: Int!
+    imageUrl: String
+    sails: String
   }
 
   input UpdateWindsurfBoardInput {
@@ -27,6 +31,8 @@ export const schema = gql`
     type: String
     model: String
     volume: Int
+    imageUrl: String
+    sails: String
   }
 
   type Mutation {

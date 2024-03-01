@@ -35,14 +35,14 @@ describe('windsurfSails', () => {
     const result = await createWindsurfSail({
       input: {
         brand: 'String',
-        size: 4377836.130333623,
+        size: 3948479.9975508666,
         type: 'String',
         model: 'String',
       },
     })
 
     expect(result.brand).toEqual('String')
-    expect(result.size).toEqual(4377836.130333623)
+    expect(result.size).toEqual(3948479.9975508666)
     expect(result.type).toEqual('String')
     expect(result.model).toEqual('String')
   })

@@ -24,6 +24,8 @@ export const QUERY: TypedDocumentNode<EditWindsurfBoardById> = gql`
       type
       model
       volume
+      imageUrl
+      sails
     }
   }
 `
@@ -43,6 +45,8 @@ const UPDATE_WINDSURF_BOARD_MUTATION: TypedDocumentNode<
       type
       model
       volume
+      imageUrl
+      sails
     }
   }
 `

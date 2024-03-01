@@ -85,6 +85,14 @@ const WindsurfSail = ({ windsurfSail }: Props) => {
               <th>Wish size</th>
               <td>{windsurfSail.wishSize}</td>
             </tr>
+            <tr>
+              <th>Image url</th>
+              <td>{windsurfSail.imageUrl}</td>
+            </tr>
+            <tr>
+              <th>Sails</th>
+              <td>{windsurfSail.sails}</td>
+            </tr>
           </tbody>
         </table>
       </div>

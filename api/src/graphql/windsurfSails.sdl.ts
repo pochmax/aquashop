@@ -8,6 +8,8 @@ export const schema = gql`
     cumber: Int
     mastSize: Float
     wishSize: Float
+    imageUrl: String
+    sails: String
   }
 
   type Query {
@@ -23,6 +25,8 @@ export const schema = gql`
     cumber: Int
     mastSize: Float
     wishSize: Float
+    imageUrl: String
+    sails: String
   }
 
   input UpdateWindsurfSailInput {
@@ -33,6 +37,8 @@ export const schema = gql`
     cumber: Int
     mastSize: Float
     wishSize: Float
+    imageUrl: String
+    sails: String
   }
 
   type Mutation {
