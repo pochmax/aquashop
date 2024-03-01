@@ -2,14 +2,16 @@ export const schema = gql`
   type User {
     id: Int!
     email: String!
-    username: String
-    role: String
+    username: String!
+    role: String!
     hashedPassword: String!
     salt: String!
     resetToken: String
     resetTokenExpiresAt: DateTime
     webAuthnChallenge: String
     credentials: [UserCredential]!
+    windsurfBoards: [WindsurfBoard]!
+    windsurfSails: [WindsurfSail]!
   }
 
   type Query {
@@ -19,8 +21,8 @@ export const schema = gql`
 
   input CreateUserInput {
     email: String!
-    username: String
-    role: String
+    username: String!
+    role: String!
     hashedPassword: String!
     salt: String!
     resetToken: String

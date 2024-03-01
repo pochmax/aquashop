@@ -1,4 +1,8 @@
-import type { QueryResolvers, MutationResolvers } from 'types/graphql'
+import type {
+  QueryResolvers,
+  MutationResolvers,
+  WindsurfSailRelationResolvers,
+} from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
@@ -36,4 +40,10 @@ export const deleteWindsurfSail: MutationResolvers['deleteWindsurfSail'] = ({
   return db.windsurfSail.delete({
     where: { id },
   })
+}
+
+export const WindsurfSail: WindsurfSailRelationResolvers = {
+  user: (_obj, { root }) => {
+    return db.windsurfSail.findUnique({ where: { id: root?.id } }).user()
+  },
 }

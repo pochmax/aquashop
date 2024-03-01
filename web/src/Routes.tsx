@@ -16,12 +16,6 @@ import { useAuth } from './auth'
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
-      <Set wrap={ScaffoldLayout} title="WindsurfBoards" titleTo="windsurfBoards" buttonLabel="New WindsurfBoard" buttonTo="newWindsurfBoard">
-        <Route path="/windsurf-boards/new" page={WindsurfBoardNewWindsurfBoardPage} name="newWindsurfBoard" />
-        <Route path="/windsurf-boards/{id:Int}/edit" page={WindsurfBoardEditWindsurfBoardPage} name="editWindsurfBoard" />
-        <Route path="/windsurf-boards/{id:Int}" page={WindsurfBoardWindsurfBoardPage} name="windsurfBoard" />
-        <Route path="/windsurf-boards" page={WindsurfBoardWindsurfBoardsPage} name="windsurfBoards" />
-      </Set>
       <Set wrap={ScaffoldLayout} title="WindsurfSails" titleTo="windsurfSails" buttonLabel="New WindsurfSail" buttonTo="newWindsurfSail">
         <Route path="/windsurf-sails/new" page={WindsurfSailNewWindsurfSailPage} name="newWindsurfSail" />
         <Route path="/windsurf-sails/{id:Int}/edit" page={WindsurfSailEditWindsurfSailPage} name="editWindsurfSail" />
@@ -33,6 +27,18 @@ const Routes = () => {
         <Route path="/users/{id:Int}/edit" page={UserEditUserPage} name="editUser" />
         <Route path="/users/{id:Int}" page={UserUserPage} name="user" />
         <Route path="/users" page={UserUsersPage} name="users" />
+      </Set>
+      <Set wrap={ScaffoldLayout} title="WindsurfBoards" titleTo="windsurfBoards" buttonLabel="New WindsurfBoard" buttonTo="newWindsurfBoard">
+        <Route path="/windsurf-boards/new" page={WindsurfBoardNewWindsurfBoardPage} name="newWindsurfBoard" />
+        <Route path="/windsurf-boards/{id:Int}/edit" page={WindsurfBoardEditWindsurfBoardPage} name="editWindsurfBoard" />
+        <Route path="/windsurf-boards/{id:Int}" page={WindsurfBoardWindsurfBoardPage} name="windsurfBoard" />
+        <Route path="/windsurf-boards" page={WindsurfBoardWindsurfBoardsPage} name="windsurfBoards" />
+      </Set>
+      <Set wrap={ScaffoldLayout} title="WindsurfBoards" titleTo="windsurfBoards" buttonLabel="New WindsurfBoard" buttonTo="newWindsurfBoard">
+      </Set>
+      <Set wrap={ScaffoldLayout} title="WindsurfSails" titleTo="windsurfSails" buttonLabel="New WindsurfSail" buttonTo="newWindsurfSail">
+      </Set>
+      <Set wrap={ScaffoldLayout} title="Users" titleTo="users" buttonLabel="New User" buttonTo="newUser">
       </Set>
       <Set wrap={ScaffoldLayout} title="Users" titleTo="users" buttonLabel="New User" buttonTo="newUser">
       </Set>

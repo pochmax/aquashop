@@ -26,7 +26,7 @@ export const QUERY: TypedDocumentNode<
       mastSize
       wishSize
       imageUrl
-      sails
+      userId
     }
   }
 `

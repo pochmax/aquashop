@@ -24,7 +24,7 @@ export const QUERY: TypedDocumentNode<
       model
       volume
       imageUrl
-      sails
+      userId
     }
   }
 `

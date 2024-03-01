@@ -6,19 +6,37 @@ export const standard = defineScenario<Prisma.WindsurfBoardCreateArgs>({
     one: {
       data: {
         brand: 'String',
-        fins: 4384165,
+        fins: 4063735,
         type: 'String',
         model: 'String',
-        volume: 436881,
+        volume: 8313238,
+        user: {
+          create: {
+            email: 'String1233003',
+            username: 'String9661359',
+            role: 'String',
+            hashedPassword: 'String',
+            salt: 'String',
+          },
+        },
       },
     },
     two: {
       data: {
         brand: 'String',
-        fins: 2412424,
+        fins: 6872895,
         type: 'String',
         model: 'String',
-        volume: 8741267,
+        volume: 6776749,
+        user: {
+          create: {
+            email: 'String2525222',
+            username: 'String2861596',
+            role: 'String',
+            hashedPassword: 'String',
+            salt: 'String',
+          },
+        },
       },
     },
   },

@@ -7,7 +7,8 @@ export const schema = gql`
     model: String!
     volume: Int!
     imageUrl: String
-    sails: String
+    userId: Int!
+    user: User!
   }
 
   type Query {
@@ -22,7 +23,7 @@ export const schema = gql`
     model: String!
     volume: Int!
     imageUrl: String
-    sails: String
+    userId: Int!
   }
 
   input UpdateWindsurfBoardInput {
@@ -32,7 +33,7 @@ export const schema = gql`
     model: String
     volume: Int
     imageUrl: String
-    sails: String
+    userId: Int
   }
 
   type Mutation {

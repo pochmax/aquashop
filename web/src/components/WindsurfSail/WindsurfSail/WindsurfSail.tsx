@@ -90,8 +90,8 @@ const WindsurfSail = ({ windsurfSail }: Props) => {
               <td>{windsurfSail.imageUrl}</td>
             </tr>
             <tr>
-              <th>Sails</th>
-              <td>{windsurfSail.sails}</td>
+              <th>User id</th>
+              <td>{windsurfSail.userId}</td>
             </tr>
           </tbody>
         </table>

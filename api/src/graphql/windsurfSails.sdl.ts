@@ -9,7 +9,8 @@ export const schema = gql`
     mastSize: Float
     wishSize: Float
     imageUrl: String
-    sails: String
+    userId: Int!
+    user: User!
   }
 
   type Query {
@@ -26,7 +27,7 @@ export const schema = gql`
     mastSize: Float
     wishSize: Float
     imageUrl: String
-    sails: String
+    userId: Int!
   }
 
   input UpdateWindsurfSailInput {
@@ -38,7 +39,7 @@ export const schema = gql`
     mastSize: Float
     wishSize: Float
     imageUrl: String
-    sails: String
+    userId: Int
   }
 
   type Mutation {

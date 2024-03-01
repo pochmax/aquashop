@@ -6,11 +6,13 @@ export const standard = defineScenario<Prisma.UserCredentialCreateArgs>({
     one: {
       data: {
         id: 'String',
-        publicKey: Buffer.from([286, 63, 195]),
-        counter: 5610225,
+        publicKey: Buffer.from([278, 294, 130]),
+        counter: 7859805,
         user: {
           create: {
-            email: 'String8303115',
+            email: 'String8899625',
+            username: 'String1447070',
+            role: 'String',
             hashedPassword: 'String',
             salt: 'String',
           },
@@ -20,11 +22,13 @@ export const standard = defineScenario<Prisma.UserCredentialCreateArgs>({
     two: {
       data: {
         id: 'String',
-        publicKey: Buffer.from([235, 281, 48]),
-        counter: 4668535,
+        publicKey: Buffer.from([295, 80, 285]),
+        counter: 4384210,
         user: {
           create: {
-            email: 'String4881805',
+            email: 'String8049466',
+            username: 'String9434130',
+            role: 'String',
             hashedPassword: 'String',
             salt: 'String',
           },

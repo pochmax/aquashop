@@ -31,20 +31,22 @@ describe('windsurfSails', () => {
     }
   )
 
-  scenario('creates a windsurfSail', async () => {
+  scenario('creates a windsurfSail', async (scenario: StandardScenario) => {
     const result = await createWindsurfSail({
       input: {
         brand: 'String',
-        size: 3948479.9975508666,
+        size: 8807071.962708203,
         type: 'String',
         model: 'String',
+        userId: scenario.windsurfSail.two.userId,
       },
     })
 
     expect(result.brand).toEqual('String')
-    expect(result.size).toEqual(3948479.9975508666)
+    expect(result.size).toEqual(8807071.962708203)
     expect(result.type).toEqual('String')
     expect(result.model).toEqual('String')
+    expect(result.userId).toEqual(scenario.windsurfSail.two.userId)
   })
 
   scenario('updates a windsurfSail', async (scenario: StandardScenario) => {

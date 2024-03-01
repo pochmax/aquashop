@@ -14,6 +14,8 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
+import { useAuth } from 'src/auth'
+
 type FormWindsurfSail = NonNullable<EditWindsurfSailById['windsurfSail']>
 
 interface WindsurfSailFormProps {
@@ -24,7 +26,9 @@ interface WindsurfSailFormProps {
 }
 
 const WindsurfSailForm = (props: WindsurfSailFormProps) => {
+  const { currentUser } = useAuth()
   const onSubmit = (data: FormWindsurfSail) => {
+    data.userId = currentUser.id
     props.onSave(data, props?.windsurfSail?.id)
   }
 
@@ -179,23 +183,6 @@ const WindsurfSailForm = (props: WindsurfSailFormProps) => {
         />
 
         <FieldError name="imageUrl" className="rw-field-error" />
-
-        <Label
-          name="sails"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Sails
-        </Label>
-
-        <TextField
-          name="sails"
-          defaultValue={props.windsurfSail?.sails}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-        />
-
-        <FieldError name="sails" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">

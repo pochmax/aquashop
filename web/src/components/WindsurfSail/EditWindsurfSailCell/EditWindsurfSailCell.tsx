@@ -27,7 +27,7 @@ export const QUERY: TypedDocumentNode<EditWindsurfSailById> = gql`
       mastSize
       wishSize
       imageUrl
-      sails
+      userId
     }
   }
 `
@@ -50,7 +50,7 @@ const UPDATE_WINDSURF_SAIL_MUTATION: TypedDocumentNode<
       mastSize
       wishSize
       imageUrl
-      sails
+      userId
     }
   }
 `

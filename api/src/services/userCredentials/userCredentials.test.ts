@@ -41,15 +41,15 @@ describe('userCredentials', () => {
       input: {
         id: 'String',
         userId: scenario.userCredential.two.userId,
-        publicKey: Buffer.from([174, 177, 167]),
-        counter: 1925735n,
+        publicKey: Buffer.from([167, 42, 203]),
+        counter: 7821327n,
       },
     })
 
     expect(result.id).toEqual('String')
     expect(result.userId).toEqual(scenario.userCredential.two.userId)
-    expect(result.publicKey).toEqual(Buffer.from([174, 177, 167]))
-    expect(result.counter).toEqual(1925735n)
+    expect(result.publicKey).toEqual(Buffer.from([167, 42, 203]))
+    expect(result.counter).toEqual(7821327n)
   })
 
   scenario('updates a userCredential', async (scenario: StandardScenario) => {

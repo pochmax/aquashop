@@ -1,6 +1,8 @@
 import { Link, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 
+import { useAuth } from 'src/auth'
+
 import { DELETE_WINDSURF_BOARD_MUTATION } from '../WindsurfBoard/WindsurfBoards'
 import { DELETE_WINDSURF_SAIL_MUTATION } from '../WindsurfSail/WindsurfSails'
 const generateItemRoutes = (item) => {
@@ -23,6 +25,7 @@ const Item = ({ item }) => {
 
   const [deleteWindsurfBoard] = useMutation(DELETE_WINDSURF_BOARD_MUTATION)
   const [deleteWindsurfSail] = useMutation(DELETE_WINDSURF_SAIL_MUTATION)
+  const { currentUser } = useAuth()
 
   const onDeleteClick = (id, typeName) => {
     if (confirm(`Are you sure you want to delete ${typeName} ${id}?`)) {
@@ -33,6 +36,8 @@ const Item = ({ item }) => {
       }
     }
   }
+
+  const currentUsername = currentUser.username
 
   return (
     <div className="card">
@@ -52,7 +57,33 @@ const Item = ({ item }) => {
           )
         }
       })}
-      <nav className="actions">
+
+      {currentUser.username === item.sails || currentUser.role === 'Admin' ? (
+        <nav className="actions">
+          <Link
+            to={editRoute}
+            title={`Edit ${item.__typename}` + item.id}
+            className="button"
+          >
+            Edit
+          </Link>
+          <button
+            type="button"
+            title={`Delete ${item.__typename}` + item.id}
+            className="button"
+            onClick={() => onDeleteClick(item.id, item.__typename)}
+          >
+            Delete
+          </button>
+          <Link
+            to={showRoute}
+            title={'Show  ' + item.brand + ' detail'}
+            className="button"
+          >
+            Show
+          </Link>
+        </nav>
+      ) : (
         <Link
           to={showRoute}
           title={'Show  ' + item.brand + ' detail'}
@@ -60,22 +91,7 @@ const Item = ({ item }) => {
         >
           Show
         </Link>
-        <Link
-          to={editRoute}
-          title={`Edit ${item.__typename}` + item.id}
-          className="button"
-        >
-          Edit
-        </Link>
-        <button
-          type="button"
-          title={`Delete ${item.__typename}` + item.id}
-          className="button"
-          onClick={() => onDeleteClick(item.id, item.__typename)}
-        >
-          Delete
-        </button>
-      </nav>
+      )}
     </div>
   )
 }
